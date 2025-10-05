@@ -2,3 +2,6 @@ packages:
   - css-module-extract
   - editors/*
   - examples/*
+
+onlyBuiltDependencies:
+  - esbuild
