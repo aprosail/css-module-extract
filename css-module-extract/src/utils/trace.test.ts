@@ -1,7 +1,7 @@
+import { detectPackageRoot } from "@/utils/trace"
 import { existsSync } from "node:fs"
 import { join } from "node:path"
 import { expect, test } from "vitest"
-import { detectPackageRoot } from "./trace"
 
 test("detectPackageRoot returns current package root", () => {
   const result = detectPackageRoot()
