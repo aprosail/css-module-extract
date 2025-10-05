@@ -1,0 +1,8 @@
+{
+  "name": "css-module-extract-vscode",
+  "displayName": "CSS Module Extract",
+  "description": "VSCode extension for css-module-extract",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true
+}

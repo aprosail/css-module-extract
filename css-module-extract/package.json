@@ -1,0 +1,6 @@
+{
+  "name": "css-module-extract",
+  "description": "An extractor to support writing css modules inside JS/TS(X).",
+  "version": "0.0.0",
+  "type": "module"
+}
