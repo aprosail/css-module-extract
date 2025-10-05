@@ -12,7 +12,7 @@ export type CssVariable = string
  * then truncated to the first 16 hexadecimal characters of SHA256.
  */
 export function cssVariable(): CssVariable {
-  const position = currentPosition(2) // depth=2 to get the caller's position
+  const position = currentPosition(2) // depth=2 to get the caller's position.
 
   if (!position.file) throw new Error("unable to determine caller file path")
   const packageRoot = detectPackageRoot()
@@ -22,7 +22,7 @@ export function cssVariable(): CssVariable {
   const hashInput = `${relativePath}:${position.line}`
   const hash = createHash("sha256").update(hashInput).digest("hex")
 
-  return `unextracted-css-variable: ${hash.substring(0, 16)}`
+  return `var(--unextracted-${hash.substring(0, 16)})`
 }
 
 export type CssSnippet = string

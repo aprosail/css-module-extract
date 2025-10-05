@@ -1,4 +1,4 @@
-import { cssVariable } from "@/css/variable"
+import { cssVariable } from "@/css"
 import { describe, expect, test, vi } from "vitest"
 
 describe("cssVariable", () => {
@@ -35,8 +35,7 @@ describe("cssVariable", () => {
   test("generates hash from caller position", () => {
     mockStack(standardStack)
     const result = cssVariable()
-    expect(result).toMatch(/^unextracted-css-variable: [a-f0-9]{16}$/)
-    expect(result).not.toBe("unextracted-css-variable: hash")
+    expect(result).toMatch(/^var\(--unextracted-[a-f0-9]{16}\)$/)
   })
 
   test("generates consistent hash for same position", () => {
@@ -58,19 +57,19 @@ describe("cssVariable", () => {
   test("handles relative path calculation", () => {
     mockStack(relativePathStack)
     const result = cssVariable()
-    expect(result).toMatch(/^unextracted-css-variable: [a-f0-9]{16}$/)
+    expect(result).toMatch(/^var\(--unextracted-[a-f0-9]{16}\)$/)
   })
 
   test("handles simplified stack format", () => {
     mockStack(simplifiedStack)
     const result = cssVariable()
-    expect(result).toMatch(/^unextracted-css-variable: [a-f0-9]{16}$/)
+    expect(result).toMatch(/^var\(--unextracted-[a-f0-9]{16}\)$/)
   })
 
   test("generates 16-character hex hash", () => {
     mockStack(standardStack)
     const result = cssVariable()
-    const hash = result.replace("unextracted-css-variable: ", "")
+    const hash = result.replace(/^var\(--unextracted-([a-f0-9]{16})\)$/, "$1")
     expect(hash).toHaveLength(16)
     expect(hash).toMatch(/^[a-f0-9]{16}$/)
   })
