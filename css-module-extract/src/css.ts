@@ -1,6 +1,7 @@
 import { currentPosition, detectPackageRoot } from "@/utils/trace"
 import { createHash } from "node:crypto"
 import { relative } from "node:path"
+import { formatTemplate } from "./utils/format"
 
 export type CssVariable = string
 
@@ -22,4 +23,13 @@ export function cssVariable(): CssVariable {
   const hash = createHash("sha256").update(hashInput).digest("hex")
 
   return `unextracted-css-variable: ${hash.substring(0, 16)}`
+}
+
+export type CssSnippet = string
+
+export function css(
+  template: TemplateStringsArray,
+  ...args: unknown[]
+): CssSnippet {
+  return "unextractedCss`" + formatTemplate(template, ...args) + "`"
 }
