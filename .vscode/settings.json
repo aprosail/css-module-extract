@@ -29,5 +29,5 @@
 
   // Code spell checker (require recommended extensions).
   "cSpell.ignorePaths": ["node_modules", "out", "pnpm-lock.yaml"],
-  "cSpell.words": ["esbenp", "oxlint"]
+  "cSpell.words": ["esbenp", "esbuild", "oxlint", "rolldown", "vitest"]
 }
