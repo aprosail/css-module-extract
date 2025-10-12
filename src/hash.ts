@@ -59,7 +59,7 @@ export function trace(depth = 2): CodePosition {
 
   const [, url, line, column] = match
   return {
-    url,
+    url: url.replace(/^file:\/\//g, ""),
     line: parseInt(line, 10),
     column: parseInt(column, 10),
   }
