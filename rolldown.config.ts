@@ -1,4 +1,4 @@
-import { readdirSync, rmSync } from "node:fs"
+import { mkdirSync, readdirSync, rmSync } from "node:fs"
 import { builtinModules } from "node:module"
 import { join } from "node:path"
 import { defineConfig } from "rolldown"
@@ -28,5 +28,6 @@ const commonJS = defineConfig({
   },
 })
 
+mkdirSync(out, { recursive: true })
 for (const n of readdirSync(out)) rmSync(join(out, n), { recursive: true })
 export default defineConfig([esModule, commonJS])
