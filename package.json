@@ -3,7 +3,22 @@
   "description": "An elegant and zero-runtime-cost css-in-script solution.",
   "version": "0.0.0",
   "type": "module",
+  "exports": {
+    "./css": {
+      "types": "./out/css.d.ts",
+      "import": "./out/css.js",
+      "require": "./out/commonjs/css.js",
+      "default": "./out/css.js"
+    },
+    "./hash": {
+      "types": "./out/hash.d.ts",
+      "import": "./out/hash.js",
+      "require": "./out/commonjs/hash.js",
+      "default": "./out/hash.js"
+    }
+  },
   "scripts": {
+    "prepublish": "pnpm review && pnpm test && pnpm build",
     "format": "prettier --write .",
     "review": "prettier --check . && oxlint",
     "build": "rolldown --config rolldown.config.ts",
@@ -14,7 +29,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/node": "catalog:",
-    "current-changelog": "^1.1.0",
+    "current-changelog": "^1.2.0",
     "oxlint": "^1.22.0",
     "prettier": "^3.6.2",
     "prettier-plugin-sh": "^0.18.0",
