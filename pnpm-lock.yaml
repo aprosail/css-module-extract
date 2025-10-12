@@ -33,8 +33,8 @@ importers:
         specifier: 'catalog:'
         version: 24.7.1
       current-changelog:
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^1.2.0
+        version: 1.2.0
       oxlint:
         specifier: ^1.22.0
         version: 1.22.0
@@ -586,8 +586,8 @@ packages:
     resolution: {integrity: sha512-5IKcdX0nnYavi6G7TtOhwkYzyjfJlatbjMjuLSfE2kYT5pMDOilZ4OvMhi637CcDICTmz3wARPoyhqyX1Y+XvA==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
-  current-changelog@1.1.0:
-    resolution: {integrity: sha512-8dGlstp13fVi+M29e6awY8R8/itH2BxnlYdTgh+6WC6NrV+DLGfdomdMIu3g1QIFjZO5QScpNSbshRXpbPM9Dw==}
+  current-changelog@1.2.0:
+    resolution: {integrity: sha512-oH0xnUeXQjdAJgFIExv5Y9Uk5T7xRbPTF29AIA+KRR6w+SZFfaGnPo6OnmtqaaECaE0sr/tEUWNj2p0+A11zxg==}
     hasBin: true
 
   debug@4.4.3:
@@ -1239,7 +1239,7 @@ snapshots:
 
   consola@3.4.2: {}
 
-  current-changelog@1.1.0:
+  current-changelog@1.2.0:
     dependencies:
       commander: 14.0.1
       consola: 3.4.2
