@@ -14,10 +14,10 @@
   // "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     "*": "${capture}.map",
-    "*.ts": "${capture}.test.ts",
+    "*.ts": "${capture}.test.ts, ${capture}.mock.ts",
     "*.js": "",
     "package.json": "pnpm-lock.yaml",
-    "readme.md": "LICENSE, CHANGELOG.md"
+    "readme.md": "license, changelog.md"
   },
 
   // Output bundle visualizations.

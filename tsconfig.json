@@ -15,7 +15,11 @@
     "strictBuiltinIteratorReturn": true,
     "strictPropertyInitialization": true,
     "noImplicitAny": true,
-    "noImplicitThis": true
+    "noImplicitThis": true,
+
+    // Path aliases.
+    "baseUrl": ".",
+    "paths": { "@/*": ["src/*"] }
   },
   "include": ["src", "rolldown.config.ts", "vitest.config.ts"]
 }
